@@ -1,0 +1,58 @@
+# Lazygit config.yml with Citruszest Theme
+# Place this in your lazygit config directory.
+# Find it by running: lazygit --print-config-dir
+
+gui:
+  theme:
+    # Base Colors
+    lightTheme: false
+    fg: '#BFBFBF'
+
+    # Panel Borders
+    activeBorderColor:
+      - '#00CC7A' # Green
+      - 'bold'
+    inactiveBorderColor:
+      - '#404040' # Visual
+
+    # Selected Line
+    selectedLineBgColor:
+      - '#232323' # Black
+    selectedRangeBgColor:
+      - '#232323'
+
+    # Text Colors (FIXED SECTION)
+    # These properties must be lists, even with one item.
+    optionsTextColor:
+      - '#00BFFF' # Blue
+    defaultFgColor:
+      - '#BFBFBF' # Foreground
+
+    # Commit Colors
+    cherryPickedCommitBgColor:
+      - '#404040' # Visual
+    cherryPickedCommitFgColor:
+      - '#00CC7A' # Green
+    unstagedChangesColor:
+      - '#FF5454' # Red
+    # This property also expects a list.
+    mergingFgColor:
+      - '#FFD700' # Yellow
+
+    # Diff Colors
+    diffTerminalColor:
+      - '#00CC7A' # Green
+
+    # Tags
+    tagColor:
+      - '#FF7431' # Orange
+
+    # Branch Colors (this map format is correct)
+    branchColors:
+      'master': '#FF5454'  # Red
+      'main': '#FF5454'    # Red
+      'develop': '#00BFFF' # Blue
+
+# Optional: Set Neovim as your editor
+os:
+  editCommand: 'nvim'
