@@ -55,4 +55,4 @@ gui:
 
 # Optional: Set Neovim as your editor
 os:
-  editCommand: 'nvim'
+  edit: 'nvim'
