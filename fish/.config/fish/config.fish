@@ -12,6 +12,7 @@ set fish_greeting
 # Set global, exported environment variables.
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx UV_PYTHON_PREFERENCE managed
+set -U SKIM_DEFAULT_COMMAND fd
 
 # Add directories to the PATH. fish_add_path handles duplicates.
 fish_add_path -p /opt/homebrew/bin
@@ -80,6 +81,11 @@ function __check_and_activate_venv --on-event fish_prompt
         end
     end
 end
+function mkcd
+    mkdir -p $argv[1]
+    cd $argv[1]
+end
+
 
 
 export XDG_CONFIG_HOME="$HOME/.config"
