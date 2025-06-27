@@ -86,6 +86,4 @@ function mkcd
     cd $argv[1]
 end
 
-
-
 export XDG_CONFIG_HOME="$HOME/.config"

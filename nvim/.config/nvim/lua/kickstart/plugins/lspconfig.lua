@@ -213,9 +213,9 @@ return {
         basedpyright = {
           settings = {
             basedpyright = {
-              analysis = {
-                typeCheckingMode = 'off',
-              },
+              -- Using Ruff's import organizer
+              disableOrganizeImports = true,
+              typeCheckingMode = 'off',
             },
           },
         },
