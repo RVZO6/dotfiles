@@ -119,13 +119,13 @@ format = '[ $user]($style)'
 [hostname]
 disabled = false
 style = 'fg:color_hostname'
-format = '[@$hostname]($style)'
+format = '[@$hostname ]($style)'
 
 [directory]
 style = "fg:color_directory"
 read_only_style = "fg:color_directory"
 repo_root_style = "bold fg:color_directory"
-format = "[  $path ]($style)"
+format = "[ $path ]($style)"
 read_only = " "
 home_symbol = "~"
 truncation_symbol = "…/"
