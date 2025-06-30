@@ -8,7 +8,7 @@ command_timeout = 2000
 
 format = """
 $os\
-$username\
+$username$hostname\
 $directory\
 $git_branch\
 $git_commit\
@@ -51,6 +51,7 @@ color_caution = '#FFD700' # Yellow (matches values)
 
 color_os = '#FF1A75'          # Bright Red (matches $variables)
 color_username = '#FF1A75'    # Bright Red (matches $variables)
+color_hostname = '#FF1A75'    # Bright Red (matches $variables)
 color_directory = '#FFD700'   # Yellow (matches values)
 color_git = '#33FFFF'         # Bright Cyan
 color_git_added = '#1AFFA3'   # Bright Green
@@ -113,7 +114,13 @@ Pop = ""
 show_always = true
 style_user = "fg:color_username"
 style_root = "bold fg:color_danger"
-format = '[ $user ]($style)'
+format = '[ $user]($style)'
+
+[hostname]
+disabled = false
+ssh_only = false
+style = 'fg:color_hostname'
+format = '[$ssh_symbol@$hostname]($style)'
 
 [directory]
 style = "fg:color_directory"
