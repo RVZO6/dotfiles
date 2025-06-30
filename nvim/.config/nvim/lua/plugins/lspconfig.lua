@@ -165,10 +165,11 @@ return {
 
       -- Diagnostic Config
       -- See :help vim.diagnostic.Opts
+      local border = 'rounded'
       vim.diagnostic.config {
         severity_sort = true,
         float = {
-          border = 'rounded',
+          border = border,
           source = 'if_many',
           winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder',
         },
@@ -197,14 +198,16 @@ return {
       }
 
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
-        border = 'rounded',
+        border = border,
         winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder',
       })
 
       vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = 'rounded',
+        border = border,
         winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder',
       })
+
+      require('lspconfig.ui.windows').default_options.border = border
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
