@@ -5,6 +5,9 @@ return {
       return not vim.b.bigfile
     end,
 
+    dependencies = {
+      'echasnovski/mini.extra',
+    },
     event = 'BufReadPost',
     opts = function()
       local ai = require 'mini.ai'
