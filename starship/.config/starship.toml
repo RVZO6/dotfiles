@@ -114,18 +114,18 @@ Pop = ""
 show_always = true
 style_user = "fg:color_username"
 style_root = "bold fg:color_danger"
-format = '[ $user ]($style)'
+format = '[ $user]($style)'
 
 [hostname]
 disabled = false
 style = 'fg:color_hostname'
-format = '[$ssh_symbol@$hostname ]($style)'
+format = '[@$hostname]($style)'
 
 [directory]
 style = "fg:color_directory"
 read_only_style = "fg:color_directory"
 repo_root_style = "bold fg:color_directory"
-format = "[$path ]($style)"
+format = "[  $path ]($style)"
 read_only = " "
 home_symbol = "~"
 truncation_symbol = "…/"

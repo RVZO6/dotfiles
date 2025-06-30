@@ -13,18 +13,36 @@ set fish_greeting
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx UV_PYTHON_PREFERENCE managed
 set -U SKIM_DEFAULT_COMMAND fd
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Add directories to the PATH. fish_add_path handles duplicates.
-fish_add_path -p /opt/homebrew/bin
 fish_add_path -p $HOME/.bun/bin
 fish_add_path -p "$HOME/.local/scripts"
-fish_add_path /Users/ryan/.spicetify
 
-# Set JAVA_HOME if Java 17 is available
-if command -v /usr/libexec/java_home >/dev/null
-    set -l java_home_path (/usr/libexec/java_home -v 17 2> /dev/null)
-    if test -n "$java_home_path"
-        set -gx JAVA_HOME $java_home_path
+# OS-specific PATH adjustments and tool initializations
+if test "$OSTYPE" = "darwin"
+    # macOS-specific settings
+    fish_add_path -p /opt/homebrew/bin
+    fish_add_path /Users/ryan/.spicetify
+
+    # Set JAVA_HOME if Java 17 is available
+    if command -v /usr/libexec/java_home >/dev/null
+        set -l java_home_path (/usr/libexec/java_home -v 17 2> /dev/null)
+        if test -n "$java_home_path"
+            set -gx JAVA_HOME $java_home_path
+        end
+    end
+else if test "$OSTYPE" = "linux-gnu"
+    # Linux-specific settings
+    # IMPORTANT: Initialize Homebrew on Linux
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+    # Set JAVA_HOME if Java is available.
+    if command -v java >/dev/null
+        set -l java_path (readlink -f (command -v java))
+        if test -n "$java_path"
+            set -gx JAVA_HOME (dirname (dirname $java_path))
+        end
     end
 end
 
