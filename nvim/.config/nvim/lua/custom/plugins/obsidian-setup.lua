@@ -1,6 +1,7 @@
 return {
   {
     'MeanderingProgrammer/render-markdown.nvim',
+    enabled = vim.fn.has('macunix') == 1,
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
@@ -13,6 +14,7 @@ return {
   },
   {
     'epwalsh/obsidian.nvim',
+    enabled = vim.fn.has('macunix') == 1,
     version = '*', -- recommended, use latest release instead of latest commit
     lazy = true,
     ft = 'markdown',
@@ -41,5 +43,9 @@ return {
       -- see below for full list of options 👇
     },
   },
-  { 'marcocofano/excalidraw.nvim', opts = {} },
+  {
+    'marcocofano/excalidraw.nvim',
+    enabled = vim.fn.has('macunix') == 1,
+    opts = {},
+  },
 }

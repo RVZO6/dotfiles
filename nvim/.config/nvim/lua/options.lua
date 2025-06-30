@@ -23,7 +23,9 @@ vim.o.cmdheight = 0
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+  if vim.fn.has('macunix') == 1 or (vim.fn.has('unix') == 1 and (vim.fn.executable('xclip') == 1 or vim.fn.executable('xsel') == 1)) then
+    vim.o.clipboard = 'unnamedplus'
+  end
 end)
 
 -- Enable break indent
