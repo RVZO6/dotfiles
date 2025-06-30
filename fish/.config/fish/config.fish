@@ -20,7 +20,8 @@ fish_add_path -p $HOME/.bun/bin
 fish_add_path -p "$HOME/.local/scripts"
 
 # OS-specific PATH adjustments and tool initializations
-if test "$OSTYPE" = "darwin"
+switch (uname)
+  case Darwin
     # macOS-specific settings
     fish_add_path -p /opt/homebrew/bin
     fish_add_path /Users/ryan/.spicetify
@@ -32,10 +33,12 @@ if test "$OSTYPE" = "darwin"
             set -gx JAVA_HOME $java_home_path
         end
     end
-else if test "$OSTYPE" = "linux-gnu"
+  case Linux
     # Linux-specific settings
     # IMPORTANT: Initialize Homebrew on Linux
-    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+    if test -e /home/linuxbrew/.linuxbrew/bin/brew
+    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+end
 
     # Set JAVA_HOME if Java is available.
     if command -v java >/dev/null
