@@ -87,7 +87,7 @@ return {
             border = 'rounded',
             winhighlight = 'Normal:NormalFloat,FloatBorder:FloatBorder',
           },
-          auto_show = false,
+          auto_show = true,
           auto_show_delay_ms = 500,
         },
       },
@@ -111,7 +111,13 @@ return {
       fuzzy = { implementation = 'lua' },
 
       -- Shows a signature help window while you type arguments for a function
-      signature = { enabled = true },
+      signature = {
+        enabled = true,
+        window = {
+          border = 'rounded',
+          winhighlight = 'FloatBorder:FloatBorder',
+        },
+      },
     },
   },
 }

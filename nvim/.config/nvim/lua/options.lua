@@ -6,6 +6,7 @@
 -- Make line numbers default
 vim.o.number = false
 vim.o.laststatus = 3
+vim.opt.swapfile = false
 -- vim.o.winborder = 'rounded'
 
 -- You can also add relative line numbers, to help with jumping.
@@ -23,7 +24,7 @@ vim.o.cmdheight = 0
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-  if vim.fn.has('macunix') == 1 or (vim.fn.has('unix') == 1 and (vim.fn.executable('xclip') == 1 or vim.fn.executable('xsel') == 1)) then
+  if vim.fn.has 'macunix' == 1 or (vim.fn.has 'unix' == 1 and (vim.fn.executable 'xclip' == 1 or vim.fn.executable 'xsel' == 1)) then
     vim.o.clipboard = 'unnamedplus'
   end
 end)
