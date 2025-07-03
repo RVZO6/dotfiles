@@ -16,9 +16,13 @@ return {
       harpoon:list():add()
     end, { desc = 'Add file to Harpoon' })
 
-    vim.keymap.set('n', '<leader>A', function()
+    vim.keymap.set('n', '<leader>H', function()
       harpoon.ui:toggle_quick_menu(harpoon:list())
     end, { desc = 'Open Harpoon quick menu' })
+
+    vim.keymap.set('n', '<leader>A', function()
+      harpoon:list():remove()
+    end, { desc = 'Remove file from Harpoon' })
 
     -- Telescope integration
     local conf = require('telescope.config').values
@@ -40,8 +44,7 @@ return {
         :find()
     end
 
-    -- FIX: Changed <C-h> to <C-e> to avoid conflicts
-    vim.keymap.set('n', '<C-e>', function()
+    vim.keymap.set('n', '<C-h>', function()
       toggle_telescope(harpoon:list())
     end, { desc = 'Open Harpoon list in Telescope' })
   end,

@@ -103,10 +103,4 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.keymap.set({ 'x', 'o' }, 'k', 'gk', { buffer = true, silent = true })
   end,
 })
-local hover = vim.lsp.buf.hover
-vim.lsp.buf.hover = function()
-  hover {
-    border = 'rounded',
-  }
-end
 -- vim: ts=2 sts=2 sw=2 et
