@@ -194,6 +194,10 @@ shift-k = ['resize height +8']
 shift-l = ['resize width +8']
 s = 'mode visual'
 w = 'mode workspace'
+minus = 'resize smart -64'
+equal = 'resize smart +64'
+shift-minus = 'resize smart -128'
+shift-equal = 'resize smart +128'
 
 [mode.visual.binding]
 esc = 'mode main'
