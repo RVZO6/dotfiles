@@ -80,6 +80,16 @@ cmd-ctrl-alt-7 = 'workspace 7'
 cmd-ctrl-alt-8 = 'workspace 8'
 cmd-ctrl-alt-9 = 'workspace 9'
 cmd-ctrl-alt-0 = 'workspace 10'
+cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
+cmd-ctrl-alt-shift-2 = 'move-node-to-workspace 2'
+cmd-ctrl-alt-shift-3 = 'move-node-to-workspace 3'
+cmd-ctrl-alt-shift-4 = 'move-node-to-workspace 4'
+cmd-ctrl-alt-shift-5 = 'move-node-to-workspace 5'
+cmd-ctrl-alt-shift-6 = 'move-node-to-workspace 6'
+cmd-ctrl-alt-shift-7 = 'move-node-to-workspace 7'
+cmd-ctrl-alt-shift-8 = 'move-node-to-workspace 8'
+cmd-ctrl-alt-shift-9 = 'move-node-to-workspace 9'
+cmd-ctrl-alt-shift-0 = 'move-node-to-workspace 10'
 
 # 'alt' binding mode declaration
 [mode.alt.binding]
@@ -91,10 +101,22 @@ slash = 'layout tiles horizontal vertical'
 comma = 'layout accordion horizontal vertical'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#focus
-h = ['focus --boundaries-action stop left', 'move-mouse window-force-center']
-j = ['focus --boundaries-action stop down', 'move-mouse window-force-center']
-k = ['focus --boundaries-action stop up', 'move-mouse window-force-center']
-l = ['focus --boundaries-action stop right', 'move-mouse window-force-center']
+h = [
+  'focus --ignore-floating --boundaries-action stop left',
+  'move-mouse window-force-center',
+]
+l = [
+  'focus --ignore-floating --boundaries-action stop right',
+  'move-mouse window-force-center',
+]
+j = [
+  'focus --ignore-floating --boundaries-action stop down',
+  'move-mouse window-force-center',
+]
+k = [
+  'focus --ignore-floating --boundaries-action stop up',
+  'move-mouse window-force-center',
+]
 
 c = ['move-mouse window-force-center']
 
