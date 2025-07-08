@@ -1,5 +1,10 @@
-return {
+return
+  {
   'echasnovski/mini.files',
+  dependencies = {
+      'echasnovski/mini.icons',
+      opts = {}
+    },
   opts = {
     mappings = {
       close = '<Esc>',

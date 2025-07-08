@@ -90,6 +90,22 @@ cmd-ctrl-alt-shift-7 = 'move-node-to-workspace 7'
 cmd-ctrl-alt-shift-8 = 'move-node-to-workspace 8'
 cmd-ctrl-alt-shift-9 = 'move-node-to-workspace 9'
 cmd-ctrl-alt-shift-0 = 'move-node-to-workspace 10'
+cmd-ctrl-alt-h = [
+  'focus --ignore-floating --boundaries-action stop left',
+  'move-mouse window-force-center',
+]
+cmd-ctrl-alt-l = [
+  'focus --ignore-floating --boundaries-action stop right',
+  'move-mouse window-force-center',
+]
+cmd-ctrl-alt-j = [
+  'focus --ignore-floating --boundaries-action stop down',
+  'move-mouse window-force-center',
+]
+cmd-ctrl-alt-k = [
+  'focus --ignore-floating --boundaries-action stop up',
+  'move-mouse window-force-center',
+]
 
 # 'alt' binding mode declaration
 [mode.alt.binding]
@@ -118,7 +134,7 @@ k = [
   'move-mouse window-force-center',
 ]
 
-c = ['move-mouse window-force-center']
+c = ['move-mouse window-force-center', 'mode main']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
 shift-h = 'move left'
@@ -253,6 +269,11 @@ run = 'layout floating'
 
 [[on-window-detected]]
 if.app-id = 'com.openai.chat'
+check-further-callbacks = true
+
+run = 'layout floating'
+[[on-window-detected]]
+if.app-id = 'org.ryujinx.Ryujinx'
 check-further-callbacks = true
 run = 'layout floating'
 

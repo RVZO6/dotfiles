@@ -12,7 +12,7 @@ set fish_greeting
 # Set global, exported environment variables.
 set -gx BUN_INSTALL "$HOME/.bun"
 set -gx UV_PYTHON_PREFERENCE managed
-set -U SKIM_DEFAULT_COMMAND fd
+set -gx SKIM_DEFAULT_COMMAND fd
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Add directories to the PATH. fish_add_path handles duplicates.
@@ -21,32 +21,32 @@ fish_add_path -p "$HOME/.local/scripts"
 
 # OS-specific PATH adjustments and tool initializations
 switch (uname)
-  case Darwin
-    # macOS-specific settings
-    fish_add_path -p /opt/homebrew/bin
-    fish_add_path /Users/ryan/.spicetify
+    case Darwin
+        # macOS-specific settings
+        fish_add_path -p /opt/homebrew/bin
+        fish_add_path /Users/ryan/.spicetify
 
-    # Set JAVA_HOME if Java 17 is available
-    if command -v /usr/libexec/java_home >/dev/null
-        set -l java_home_path (/usr/libexec/java_home -v 17 2> /dev/null)
-        if test -n "$java_home_path"
-            set -gx JAVA_HOME $java_home_path
+        # Set JAVA_HOME if Java 17 is available
+        if command -v /usr/libexec/java_home >/dev/null
+            set -l java_home_path (/usr/libexec/java_home -v 17 2> /dev/null)
+            if test -n "$java_home_path"
+                set -gx JAVA_HOME $java_home_path
+            end
         end
-    end
-  case Linux
-    # Linux-specific settings
-    # IMPORTANT: Initialize Homebrew on Linux
-    if test -e /home/linuxbrew/.linuxbrew/bin/brew
-    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-end
+    case Linux
+        # Linux-specific settings
+        # IMPORTANT: Initialize Homebrew on Linux
+        if test -e /home/linuxbrew/.linuxbrew/bin/brew
+            eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+        end
 
-    # Set JAVA_HOME if Java is available.
-    if command -v java >/dev/null
-        set -l java_path (readlink -f (command -v java))
-        if test -n "$java_path"
-            set -gx JAVA_HOME (dirname (dirname $java_path))
+        # Set JAVA_HOME if Java is available.
+        if command -v java >/dev/null
+            set -l java_path (readlink -f (command -v java))
+            if test -n "$java_path"
+                set -gx JAVA_HOME (dirname (dirname $java_path))
+            end
         end
-    end
 end
 
 # --------------------------------------------------------------------
@@ -65,8 +65,8 @@ end
 # --------------------------------------------------------------------
 #  Aliases
 # --------------------------------------------------------------------
-alias codein 'code-insiders'
-alias nvim-kickstart 'NVIM_APPNAME="nvim-kickstart" nvim'
+alias codein code-insiders
+alias nvim-test 'NVIM_APPNAME="nvim-test" nvim'
 
 # --------------------------------------------------------------------
 #  Keybindings
