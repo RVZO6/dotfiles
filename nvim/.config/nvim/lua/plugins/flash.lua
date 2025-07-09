@@ -3,7 +3,15 @@ return {
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		---@type Flash.Config
-		opts = {},
+		opts = {
+			prompt = {
+				enabled = false,
+			},
+		},
+		config = function(_, opts)
+			require("flash").setup(opts)
+			vim.api.nvim_set_hl(0, "FlashBackdrop", { fg = "#696969" })
+		end,
   -- stylua: ignore
   keys = {
     { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },

@@ -70,6 +70,7 @@ vim.diagnostic.config({ virtual_text = true })
 if vim.loader then
 	vim.loader.enable()
 end
+
 --------------------------------------------
 -------------------Keymaps------------------
 --------------------------------------------

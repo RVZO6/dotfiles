@@ -120,18 +120,22 @@ comma = 'layout accordion horizontal vertical'
 h = [
   'focus --ignore-floating --boundaries-action stop left',
   'move-mouse window-force-center',
+  'mode main',
 ]
 l = [
   'focus --ignore-floating --boundaries-action stop right',
   'move-mouse window-force-center',
+  'mode main',
 ]
 j = [
   'focus --ignore-floating --boundaries-action stop down',
   'move-mouse window-force-center',
+  'mode main',
 ]
 k = [
   'focus --ignore-floating --boundaries-action stop up',
   'move-mouse window-force-center',
+  'mode main',
 ]
 
 c = ['move-mouse window-force-center', 'mode main']
