@@ -11,30 +11,23 @@ return {
 
 	-- Mason setup for Python
 	{
-		"WhoIsSethDaniel/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = {
+		"williamboman/mason-lspconfig.nvim",
+		opts = function(_, opts)
+			opts.ensure_installed = opts.ensure_installed or {}
+			vim.list_extend(opts.ensure_installed, {
 				"basedpyright",
-			},
-		},
-	},
-	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		dependencies = { "williamboman/mason.nvim" },
-		opts = {
-			ensure_installed = {
-				"ruff",
-			},
-		},
+			})
+		end,
 	},
 
 	-- Formatter setup for Python
 	{
 		"stevearc/conform.nvim",
-		opts = {
-			formatters_by_ft = {
+		opts = function(_, opts)
+			opts.formatters_by_ft = opts.formatters_by_ft or {}
+			vim.tbl_deep_extend("force", opts.formatters_by_ft, {
 				python = { "ruff" },
-			},
-		},
+			})
+		end,
 	},
 }

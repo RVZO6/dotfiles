@@ -18,9 +18,10 @@ return {
 
   -- Mason setup for web-related tools
   {
-    "WhoIsSethDaniel/mason-lspconfig.nvim",
-    opts = {
-      ensure_installed = {
+    "williamboman/mason-lspconfig.nvim",
+    opts = function(_, opts)
+      opts.ensure_installed = opts.ensure_installed or {}
+      vim.list_extend(opts.ensure_installed, {
         "cssls",
         "html",
         "jsonls",
@@ -29,24 +30,17 @@ return {
         "emmet_ls",
         "vtsls",
         "yamlls",
-      },
-    },
+      })
+    end,
   },
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    dependencies = { "williamboman/mason.nvim" },
-    opts = {
-      ensure_installed = {
-        "prettierd",
-      },
-    },
-  },
+
 
   -- Formatter setup for web languages
   {
     "stevearc/conform.nvim",
-    opts = {
-      formatters_by_ft = {
+    opts = function(_, opts)
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
+      vim.tbl_deep_extend("force", opts.formatters_by_ft, {
         javascript = { "prettierd", "prettier" },
         typescript = { "prettierd", "prettier" },
         javascriptreact = { "prettierd", "prettier" },
@@ -56,7 +50,7 @@ return {
         json = { "prettierd", "prettier" },
         yaml = { "prettierd", "prettier" },
         markdown = { "prettierd", "prettier" },
-      },
-    },
+      })
+    end,
   },
 }

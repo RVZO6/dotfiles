@@ -40,39 +40,31 @@ return {
 	},
 	-- Mason setup for SQL tools
 	{
-		"WhoIsSethDaniel/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = {
-				"sqlls",
-			},
-		},
-	},
-	{
-		"WhoIsSethDaniel/mason-tool-installer.nvim",
-		dependencies = { "williamboman/mason.nvim" },
-		opts = {
-			ensure_installed = {
-				"sleek",
-			},
-		},
+		"williamboman/mason-lspconfig.nvim",
+		opts = function(_, opts)
+			opts.ensure_installed = opts.ensure_installed or {}
+			vim.list_extend(opts.ensure_installed, {})
+		end,
 	},
 
 	-- SQL formatting
 	{
 		"stevearc/conform.nvim",
-		opts = {
-			formatters_by_ft = {
+		opts = function(_, opts)
+			opts.formatters_by_ft = opts.formatters_by_ft or {}
+			vim.tbl_deep_extend("force", opts.formatters_by_ft, {
 				sql = { "sleek" },
 				mysql = { "sleek" },
 				plsql = { "sleek" },
-			},
-			formatters = {
+			})
+			opts.formatters = opts.formatters or {}
+			vim.tbl_deep_extend("force", opts.formatters, {
 				sleek = {
 					command = "sleek",
 					args = "--indent-spaces=2 --lines-between-queries=3",
 				},
-			},
-		},
+			})
+		end,
 	},
 
 	-- Treesitter for SQL syntax

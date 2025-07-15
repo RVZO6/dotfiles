@@ -30,7 +30,7 @@ return {
 
   {
     "mason-org/mason-lspconfig.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile", "VeryLazy" },
     cmd = { "LspInfo", "LspInstall", "LspUninstall" },
     dependencies = { "neovim/nvim-lspconfig" },
     opts = {
