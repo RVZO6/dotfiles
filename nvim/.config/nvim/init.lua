@@ -18,8 +18,31 @@ if not (vim.loop.fs_stat or vim.uv.fs_stat)(lazypath) then
 	})
 end
 vim.opt.rtp:prepend(lazypath) -- Add lazy.nvim to runtime path
+
+-- Helper function to recursively find plugin directories and return a lazy.nvim spec
+local function get_plugin_specs(root_dir_name)
+	local specs, root = {}, vim.fn.stdpath("config") .. "/lua/" .. root_dir_name
+
+	local function scan(path, pkg)
+		local has_lua = false
+		for name, t in vim.fs.dir(path) do
+			if t == "file" and name:sub(-4) == ".lua" then
+				has_lua = true
+			elseif t == "directory" and name:sub(1, 1) ~= "." then
+				scan(path .. "/" .. name, pkg .. "." .. name)
+			end
+		end
+		if has_lua then
+			specs[#specs + 1] = { import = pkg }
+		end
+	end
+
+	scan(root, root_dir_name)
+	return specs
+end
+
 require("lazy").setup({
-	spec = { { import = "plugins" } },
+	spec = get_plugin_specs("plugins"),
 	checker = { enabled = true }, -- Auto-check for updates
 	install = { missing = true },
 })

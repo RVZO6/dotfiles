@@ -40,14 +40,21 @@ return {
 	},
 	-- Mason setup for SQL tools
 	{
-		"williamboman/mason.nvim",
-		opts = function(_, opts)
-			opts.ensure_installed = opts.ensure_installed or {}
-			vim.list_extend(opts.ensure_installed, {
+		"WhoIsSethDaniel/mason-lspconfig.nvim",
+		opts = {
+			ensure_installed = {
 				"sqlls",
+			},
+		},
+	},
+	{
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
+		dependencies = { "williamboman/mason.nvim" },
+		opts = {
+			ensure_installed = {
 				"sleek",
-			})
-		end,
+			},
+		},
 	},
 
 	-- SQL formatting
