@@ -1,6 +1,7 @@
 return
   {
   'echasnovski/mini.files',
+  event = "VeryLazy",
   dependencies = {
       'echasnovski/mini.icons',
       opts = {}

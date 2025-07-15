@@ -67,9 +67,6 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 vim.o.winborder = "rounded"
 vim.diagnostic.config({ virtual_text = true })
-if vim.loader then
-	vim.loader.enable()
-end
 
 --------------------------------------------
 -------------------Keymaps------------------

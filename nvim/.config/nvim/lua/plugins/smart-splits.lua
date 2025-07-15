@@ -1,6 +1,5 @@
 return {
 	"mrjones2014/smart-splits.nvim",
-	lazy = false,
 	-- Add this 'opts' table to configure the plugin
 	opts = {},
 	keys = function()

@@ -13,7 +13,7 @@ return {
 		},
 		init = function()
 			vim.g.db_ui_use_nerd_fonts = 1
-			vim.g.db_ui_winwidth = 40
+			vim.g.db_ui_winwidth = 20
 			vim.g.db_ui_show_database_icon = 1
 			vim.g.db_ui_win_position = "left"
 			vim.g.db_ui_auto_execute_table_helpers = 1
@@ -79,14 +79,5 @@ return {
 			},
 			indent = { enable = true },
 		},
-	},
-
-	-- Enhanced SQL syntax (PostgreSQL focused)
-	{
-		"lifepillar/pgsql.vim",
-		ft = { "sql", "pgsql" },
-		config = function()
-			vim.g.sql_type_default = "postgresql"
-		end,
 	},
 }

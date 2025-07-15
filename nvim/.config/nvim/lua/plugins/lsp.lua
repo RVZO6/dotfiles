@@ -26,11 +26,11 @@ return {
 			},
 		},
 	},
-	{ "mason-org/mason.nvim", opts = {} },
+	{ "mason-org/mason.nvim", cmd = "Mason", event = "VeryLazy", opts = {} },
 
 	{
 		"mason-org/mason-lspconfig.nvim",
-		event = { "BufReadPre", "BufNewFile", "VeryLazy" },
+		event = { "BufReadPre", "BufNewFile" },
 		cmd = { "LspInfo", "LspInstall", "LspUninstall" },
 		dependencies = { "neovim/nvim-lspconfig" },
 		opts = {},
