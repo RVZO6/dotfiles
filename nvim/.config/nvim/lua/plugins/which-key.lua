@@ -7,7 +7,7 @@ return {
 			-- this setting is independent of vim.o.timeoutlen
 			preset = "modern",
 			show_help = false,
-			delay = 0,
+			delay = 300,
 			icons = {
 				-- set icon mappings to true if you have a Nerd Font
 				mappings = true,

@@ -109,3 +109,20 @@ function mkcd
 end
 
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# pnpm
+set -gx PNPM_HOME /Users/ryan/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+# Add libpq to PATH
+fish_add_path /opt/homebrew/opt/libpq/bin
+
+# Compiler flags for libpq
+set -gx LDFLAGS -L/opt/homebrew/opt/libpq/lib
+set -gx CPPFLAGS -I/opt/homebrew/opt/libpq/include
+
+# Pkg-config path for libpq
+set -gx PKG_CONFIG_PATH /opt/homebrew/opt/libpq/lib/pkgconfig
