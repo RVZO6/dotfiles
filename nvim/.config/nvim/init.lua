@@ -1,7 +1,3 @@
---------------------------------------------
---------------------Lazy--------------------
---------------------------------------------
-
 -- Set leader keys BEFORE loading plugins
 vim.g.mapleader = " "       -- Leader = space
 vim.g.maplocalleader = "\\" -- Local leader = backslash
@@ -47,9 +43,6 @@ require("lazy").setup({
   install = { missing = true },
 })
 
---------------------------------------------
--------------------Options------------------
---------------------------------------------
 
 vim.o.number = false
 vim.o.cmdheight = 0
@@ -91,19 +84,12 @@ vim.o.confirm = true
 vim.o.winborder = "rounded"
 vim.diagnostic.config({ virtual_text = true })
 
---------------------------------------------
--------------------Keymaps------------------
---------------------------------------------
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 vim.keymap.set("n", "j", "gj")
 vim.keymap.set("n", "k", "gk")
-vim.keymap.del("n", "<leader><space>h")
-vim.keymap.del("n", "<leader><space>j")
-vim.keymap.del("n", "<leader><space>k")
-vim.keymap.del("n", "<leader><space>l")
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
