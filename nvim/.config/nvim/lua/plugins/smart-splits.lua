@@ -1,15 +1,19 @@
 return {
   "mrjones2014/smart-splits.nvim",
-  -- Add this 'opts' table to configure the plugin
+  -- event = "VeryLazy",
+  lazy = true,
   opts = {},
   keys = function()
     local smart_splits = require("smart-splits")
+    local modes = { "n", "i", "v", "t" } -- apply in normal, insert, visual, terminal modes
     return {
-      -- resizing splits (NO CHANGES NEEDED HERE)
-      { "<A-h>", smart_splits.resize_left, desc = "Resize split left" },
-      { "<A-j>", smart_splits.resize_down, desc = "Resize split down" },
-      { "<A-k>", smart_splits.resize_up, desc = "Resize split up" },
-      { "<A-l>", smart_splits.resize_right, desc = "Resize split right" },
+      -- resizing splits
+      { "<A-j>", false },
+      { "<A-k>", false },
+      { "<A-h>", smart_splits.resize_left, desc = "Resize split left", mode = modes },
+      { "<A-j>", smart_splits.resize_down, desc = "Resize split down", mode = modes },
+      { "<A-k>", smart_splits.resize_up, desc = "Resize split up", mode = modes },
+      { "<A-l>", smart_splits.resize_right, desc = "Resize split right", mode = modes },
 
       -- moving between splits
       { "<C-h>", smart_splits.move_cursor_left, desc = "Move to left split" },
