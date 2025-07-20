@@ -2,7 +2,6 @@ return {
   {
     "folke/snacks.nvim",
     keys = {
-      { "<leader>E", false },
       {
         "<leader><space>",
         function()
@@ -12,9 +11,6 @@ return {
       },
     },
     opts = {
-      explorer = { enabled = false },
-      indent = { enabled = false },
-      statuscolumn = { enabled = false },
       dashboard = {
         -- enabled = false,
         enabled = true,
