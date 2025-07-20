@@ -1,8 +1,14 @@
--- Autocmds are automatically loaded on the VeryLazy event
--- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
---
--- Add any additional autocmds here
--- with `vim.api.nvim_create_autocmd`
---
--- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
--- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
+-- markdown disable diagnostics by default
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "markdown",
+  group = vim.api.nvim_create_augroup("disable_markdown_diagnostics_on_enter", { clear = true }),
+  callback = function(args)
+    local bufnr = args.buf
+    -- Check if diagnostics are already disabled before attempting to disable again
+    if vim.diagnostic.is_enabled({ bufnr = bufnr }) then
+      -- vim.diagnostic.enable(false, { bufnr = bufnr })
+      -- HACK: snacks toggle workaround. deprecated but will change when snacks updates
+      vim.diagnostic.disable(bufnr)
+    end
+  end,
+})
