@@ -39,6 +39,10 @@ return {
       statuscolumn = { enabled = false },
     },
   },
+  {
+    "lewis6991/gitsigns.nvim",
+    enabled = false,
+  },
 }
 
 -- Comments from original files:
@@ -83,4 +87,3 @@ return {
 
 -- from lua/plugins/*noice.lua:
 -- currently broken with win.o.winborder and i dont need it sooooooooo
-
