@@ -1,6 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   enabled = false,
+  -- init = function() end,
   --   opts = function(_, opts)
   --     -- 1. Get the theme. It might be a string (e.g., "auto") or a table.
   --     local theme = opts.options.theme

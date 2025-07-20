@@ -1,22 +1,22 @@
-local MiniFiles = require("mini.files")
-
 return {
   "echasnovski/mini.files",
+  lazy = true,
   keys = {
+    { "<leader>fm", false },
+    { "<leader>fM", false },
     {
       "<leader>e",
       function()
-        MiniFiles.open()
+        require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
       end,
-      desc = "Mini Files: open dir of current file",
+      desc = "Open mini.files (Directory of Current File)",
     },
     {
       "<leader>o",
       function()
-        MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
-        MiniFiles.reveal_cwd()
+        require("mini.files").open(vim.uv.cwd(), true)
       end,
-      desc = "Mini Files: open cwd",
+      desc = "Open mini.files (cwd)",
     },
   },
   opts = {

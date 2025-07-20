@@ -1,0 +1,3 @@
+fish_vi_key_bindings
+set -U fish_vi_key_timeout 100
+set fish_greeting

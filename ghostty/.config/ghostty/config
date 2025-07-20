@@ -5,9 +5,11 @@ background-opacity = 0.9
 theme = citruszest
 macos-titlebar-style = hidden
 window-padding-x = 21
-window-padding-y = 
 font-size = 16
 macos-option-as-alt = left
 background-blur = 40
 confirm-close-surface = false
 keybind="cmd+c=copy_to_clipboard"
+mouse-hide-while-typing = true
+scrollback-limit = 1000000
+shell-integration = fish

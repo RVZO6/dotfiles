@@ -16,6 +16,7 @@ return {
       indent = { enabled = false },
       statuscolumn = { enabled = false },
       dashboard = {
+        -- enabled = false,
         enabled = true,
         preset = {
           header = [[
