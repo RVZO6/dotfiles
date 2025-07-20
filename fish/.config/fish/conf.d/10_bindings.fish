@@ -7,6 +7,8 @@ function tmux_or_attach
 end
 
 bind \ct tmux_or_attach
+bind -M insert \ct tmux_or_attach
+
 bind -M insert \t accept-autosuggestion
 bind \cf "~/.config/scripts/tmux-sessionizer"
 
