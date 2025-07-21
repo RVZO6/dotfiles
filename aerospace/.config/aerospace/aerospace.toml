@@ -18,6 +18,7 @@ after-login-command = []
 # Start AeroSpace at login
 start-at-login = true
 
+
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
 enable-normalization-opposite-orientation-for-nested-containers = true
@@ -53,6 +54,12 @@ key-mapping.preset = 'qwerty'
 #                 In this example, 24 is a default value when there is no match.
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
+
+exec-on-workspace-change = [
+    '/bin/bash', '-c',
+    '/Users/ryan/dotfiles/aerospace/.config/aerospace/scripts/bsp_tiling.sh'
+]
+
 [gaps]
 inner.horizontal = 10
 inner.vertical = 10
@@ -60,6 +67,7 @@ outer.left = 10
 outer.bottom = 10
 outer.top = 10
 outer.right = 10
+
 
 #
 # Bindings

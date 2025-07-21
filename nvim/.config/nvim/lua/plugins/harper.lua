@@ -1,9 +1,8 @@
--- lua/plugins/lsp/harper-ls.lua
 return {
   "neovim/nvim-lspconfig",
   opts = {
     servers = {
-      ["harper-ls"] = {
+      ["harper_ls"] = {
         filetypes = {
           "markdown",
           "text",

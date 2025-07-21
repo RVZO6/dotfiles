@@ -15,6 +15,5 @@ vim.o.statusline = table.concat({
   "%c", -- The column number
   "         ",
   "%P", -- Percentage through the file
-  " ",
 })
 vim.g.lazyvim_blink_main = true

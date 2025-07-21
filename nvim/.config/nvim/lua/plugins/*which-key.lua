@@ -2,7 +2,7 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      preset = "modern",
+      -- preset = "modern",
       show_help = false,
     },
   },

@@ -13,3 +13,6 @@ keybind="cmd+c=copy_to_clipboard"
 mouse-hide-while-typing = true
 scrollback-limit = 1000000
 shell-integration = fish
+# custom-shader = shaders/cursor_smear.glsl
+# custom-shader = ./shaders/cursor_smear_fade.glsl
+# custom-shader = ./shaders/cusor_smear_fade_tapered.glsl
