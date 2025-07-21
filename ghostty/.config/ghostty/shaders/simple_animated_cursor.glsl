@@ -40,10 +40,6 @@ vec2 normalize(vec2 value, float isPosition) {
     return (value * 2.0 - (iResolution.xy * isPosition)) / iResolution.y;
 }
 
-float antialising(float distance) {
-    return 1. - smoothstep(0., normalize(vec2(2., 2.), 0.).x, distance);
-}
-
 float determineStartVertexFactor(vec2 a, vec2 b) {
     // Conditions using step
     float condition1 = step(b.x, a.x) * step(a.y, b.y); // a.x < b.x && a.y > b.y
@@ -60,7 +56,7 @@ float ease(float x) {
     return pow(1.0 - x, 3.0);
 }
 
-const vec4 TRAIL_COLOR = vec4(1., 1., 0., 1.0);
+const float OPACITY = 0.6;
 const float DURATION = 0.2; //IN SECONDS
 
 void mainImage(out vec4 fragColor, in vec2 fragCoord)
@@ -88,6 +84,7 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     vec2 v2 = vec2(previousCursor.x + currentCursor.z * invertedVertexFactor, previousCursor.y);
     vec2 v3 = vec2(previousCursor.x + currentCursor.z * vertexFactor, previousCursor.y - previousCursor.w);
 
+    float sdfPreviousCursor = getSdfRectangle(vu, previousCursor.xy - (previousCursor.zw * offsetFactor), previousCursor.zw * 0.5);
     float sdfCurrentCursor = getSdfRectangle(vu, currentCursor.xy - (currentCursor.zw * offsetFactor), currentCursor.zw * 0.5);
     float sdfTrail = getSdfParallelogram(vu, v0, v1, v2, v3);
 
@@ -98,17 +95,15 @@ void mainImage(out vec4 fragColor, in vec2 fragCoord)
     vec2 centerCP = getRectangleCenter(previousCursor);
     float lineLength = distance(centerCC, centerCP);
 
-    vec4 newColor = vec4(fragColor);
-    // Compute fade factor based on distance along the trail
-    float fadeFactor = 1.0 - smoothstep(lineLength, sdfCurrentCursor, easedProgress * lineLength);
+    vec4 cursorColor = iCurrentCursorColor;
+    cursorColor.a = OPACITY;
 
-    // Apply fading effect to trail color
-    vec4 fadedTrailColor = TRAIL_COLOR * fadeFactor;
-
-    // Blend trail with fade effect
-    newColor = mix(newColor, fadedTrailColor, antialising(sdfTrail));
+    // Draw trail
+    fragColor = mix(fragColor, cursorColor, step(sdfTrail, 0.) * cursorColor.a);
+    // Draw previous cursor
+    fragColor = mix(fragColor, cursorColor, step(sdfPreviousCursor, 0.) * cursorColor.a);
     // Draw current cursor
-    newColor = mix(newColor, TRAIL_COLOR, antialising(sdfCurrentCursor));
-    newColor = mix(newColor, fragColor, step(sdfCurrentCursor, 0.));
-    fragColor = mix(fragColor, newColor, step(sdfCurrentCursor, easedProgress * lineLength));
+    vec4 currentCursorColor = mix(fragColor, cursorColor, step(sdfCurrentCursor, 0.) * cursorColor.a);
+    // Animate the reveal
+    fragColor = mix(fragColor, currentCursorColor, step(sdfCurrentCursor, easedProgress * lineLength));
 }
