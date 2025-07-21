@@ -13,6 +13,11 @@ keybind="cmd+c=copy_to_clipboard"
 mouse-hide-while-typing = true
 scrollback-limit = 1000000
 shell-integration = fish
+keybind = unconsumed:ctrl+i=ignore
+
+keybind = global:cmd+slash=toggle_quick_terminal
+quick-terminal-position = bottom
+quick-terminal-animation-duration = 0
 # custom-shader = shaders/cursor_smear.glsl
 # custom-shader = shaders/cursor_frozen.glsl
 # custom-shader = ./shaders/debug_cursor_animated.glsl

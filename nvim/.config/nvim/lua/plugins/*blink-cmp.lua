@@ -2,7 +2,6 @@ return {
   "saghen/blink.cmp",
   -- NOTE: only becuase noice is disabled
   event = { "InsertEnter", "CmdlineEnter" },
-  build = "cargo build --release",
   opts = {
     keymap = {
       preset = "default",

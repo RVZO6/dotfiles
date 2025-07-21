@@ -308,4 +308,8 @@ run = ['layout floating']
 if.app-id = "com.mitchellh.ghostty"
 run = ["layout tiling"]
 
+[[on-window-detected]]
+if.app-id="us.zoom.xos"
+run = ["layout floating"]
+
 # Second child
