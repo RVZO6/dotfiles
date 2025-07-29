@@ -3,6 +3,12 @@ return {
   -- NOTE: only becuase noice is disabled
   event = { "InsertEnter", "CmdlineEnter" },
   opts = {
+    -- Blink.cmp calls this function to check "Should I be enabled right now?"
+    -- vim.b.completion ~= false means: only OFF when explicitly set to false, otherwise ON
+    -- nil (default) → ON, true → ON, false → OFFbuffer local var. completion should
+    enabled = function()
+      return vim.b.completion ~= false
+    end,
     keymap = {
       preset = "default",
     },

@@ -7,11 +7,16 @@ function tmux_or_attach
 end
 
 bind \ct tmux_or_attach
-bind -M insert \t accept-autosuggestion
 bind \cf "~/.config/scripts/tmux-sessionizer"
 
-function show-completions
-    commandline -f complete
-end
+# nvim completion bindings
+bind \cn next-completion
+bind \cp prev-completion
+set -U fifc_keybinding \cg
 
-bind \cg show-completions
+# Accept autosuggestion with Tab
+
+bind -M insert \t accept-autosuggestion
+
+# In normal/default (vi normal) mode: Tab accepts suggestion from prompt
+bind -M default \t accept-autosuggestion

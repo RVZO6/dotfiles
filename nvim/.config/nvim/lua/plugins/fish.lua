@@ -1,10 +1,10 @@
 return {
   -- Configure mason-lspconfig to ensure the fish-lsp is installed
   {
-    "williamboman/mason-lspconfig.nvim",
+    "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        -- "fish_lsp", -- this doesnt work for some reason. idk why
+        "fish-lsp", -- this doesnt work for some reason. idk why
       },
     },
   },

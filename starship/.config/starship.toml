@@ -85,7 +85,7 @@ color_danger = '#9d0006'
 [os]
 disabled = false
 style = "fg:color_os"
-format = '[$symbol]($style)'
+format = '[$symbol ]($style)'
 
 [os.symbols]
 Windows = "󰍲"

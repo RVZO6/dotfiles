@@ -2,17 +2,18 @@ set -Ux BUN_INSTALL "$HOME/.bun"
 set -Ux UV_PYTHON_PREFERENCE managed
 set -Ux SKIM_DEFAULT_COMMAND fd
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
-set -Ux PNPM_HOME "/Users/ryan/Library/pnpm"
+set -Ux PNPM_HOME /Users/ryan/Library/pnpm
 
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.local/scripts"
 fish_add_path "/Users/ryan/.spicetify"
 fish_add_path "$PNPM_HOME"
+fish_add_path "$HOME/.local/share/bob/nvim-bin"
 
 switch (uname)
     case Darwin
-        fish_add_path "/opt/homebrew/bin"
-        fish_add_path "/opt/homebrew/opt/libpq/bin"
+        fish_add_path /opt/homebrew/bin
+        fish_add_path /opt/homebrew/opt/libpq/bin
 
         if command -v /usr/libexec/java_home >/dev/null
             set -l java_home_path (/usr/libexec/java_home -v 17 2>/dev/null)
@@ -21,9 +22,9 @@ switch (uname)
             end
         end
 
-        set -Ux LDFLAGS "-L/opt/homebrew/opt/libpq/lib"
-        set -Ux CPPFLAGS "-I/opt/homebrew/opt/libpq/include"
-        set -Ux PKG_CONFIG_PATH "/opt/homebrew/opt/libpq/lib/pkgconfig"
+        set -Ux LDFLAGS -L/opt/homebrew/opt/libpq/lib
+        set -Ux CPPFLAGS -I/opt/homebrew/opt/libpq/include
+        set -Ux PKG_CONFIG_PATH /opt/homebrew/opt/libpq/lib/pkgconfig
 
     case Linux
         # IMPORTANT: Initialize Homebrew on Linux
