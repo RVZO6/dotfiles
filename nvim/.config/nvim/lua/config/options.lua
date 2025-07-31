@@ -4,6 +4,7 @@ vim.opt.spell = false
 vim.opt.signcolumn = "no" -- no side column
 vim.o.winborder = "rounded" -- rounded borders on windows
 vim.o.cmdheight = 0
+vim.o.laststatus = 3
 vim.o.statusline = table.concat({
   "%f", -- Relative path to the file
   " ", -- A space
@@ -18,3 +19,4 @@ vim.o.statusline = table.concat({
 })
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.o.termguicolors = true
+
