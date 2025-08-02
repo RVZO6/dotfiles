@@ -19,4 +19,3 @@ vim.o.statusline = table.concat({
 })
 vim.g.lazyvim_python_lsp = "basedpyright"
 vim.o.termguicolors = true
-

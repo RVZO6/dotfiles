@@ -3,6 +3,7 @@ set -Ux UV_PYTHON_PREFERENCE managed
 set -Ux SKIM_DEFAULT_COMMAND fd
 set -Ux XDG_CONFIG_HOME "$HOME/.config"
 set -Ux PNPM_HOME /Users/ryan/Library/pnpm
+set -gx JAVA_HOME "/Library/Java/JavaVirtualMachines/temurin-24.jdk/Contents/Home"
 
 fish_add_path "$HOME/.bun/bin"
 fish_add_path "$HOME/.local/scripts"
@@ -41,3 +42,9 @@ switch (uname)
 end
 
 set -Ux EDITOR nvim
+set -Ux ANDROID_HOME "/opt/homebrew/share/android-commandlinetools"
+fish_add_path "$ANDROID_HOME/cmdline-tools/latest/bin"
+fish_add_path "$ANDROID_HOME/platform-tools"
+fish_add_path "$ANDROID_HOME/emulator"
+fish_add_path "$ANDROID_HOME/tools"
+fish_add_path "$ANDROID_HOME/tools/bin"
