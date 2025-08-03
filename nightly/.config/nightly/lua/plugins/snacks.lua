@@ -8,6 +8,22 @@ return {
 			{ "<leader>sh",    function() Snacks.picker.help() end,  desc = "Find help" },
 			{ "<leader>space", function() Snacks.picker.smart() end, desc = "Smart picker" },
 			{
+				"<C-_>",
+				function()
+					-- Snacks.terminal(nil, { cwd = vim.fn.getcwd() })
+					Snacks.terminal()
+				end,
+				desc = "Toggle Terminal",
+				mode = "n",
+			},
+			{
+				"<C-_>",
+				"<C-\\><C-n><Cmd>close<CR>",
+				desc = "Close Terminal",
+				mode = "t", -- means this runs only in terminal mode
+			},
+
+			{
 				"<leader>fc",
 				function()
 					Snacks.picker.files({
@@ -35,6 +51,7 @@ return {
 			require("mini.icons").setup()
 			require("snacks").setup({
 				picker = { enabled = true },
+				terminal = { enabled = true },
 			})
 		end,
 	},

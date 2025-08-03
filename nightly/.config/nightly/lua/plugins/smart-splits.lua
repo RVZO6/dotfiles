@@ -84,7 +84,6 @@ return {
 		},
 
 		after = function()
-			-- Optional: configure plugin after it's loaded
 			require("smart-splits").setup({})
 		end,
 	},
