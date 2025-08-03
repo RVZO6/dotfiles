@@ -1,5 +1,4 @@
 return {
-  -- Disable kotlin_language_server and enable kotlin_lsp
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -8,15 +7,16 @@ return {
       },
     },
   },
-
+  -- Separate entry for kotlin_lsp
   {
-    "neovim/nvim-lspconfig",
+    "kotlin-lsp-enable",
+    dir = vim.fn.stdpath("config"),
     config = function()
       vim.lsp.enable("kotlin_lsp")
     end,
+    dependencies = { "neovim/nvim-lspconfig" },
+    ft = "kotlin", -- Only load for Kotlin files
   },
-
-  -- Mason: only ensure kotlin-lsp is installed
   {
     "williamboman/mason.nvim",
     opts = {
