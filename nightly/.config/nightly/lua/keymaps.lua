@@ -3,7 +3,8 @@ local keymap = vim.keymap.set
 
 -- File operations
 keymap("n", "<leader>o", ":update<CR> :source<CR>")
-keymap("n", "<C-s>", ":write<CR>")
+keymap("n", "<leader>w", ":write<CR>")
+keymap("n", "<leader>W", ":writeall<CR>")
 keymap("n", "<leader>q", ":quit<CR>")
 keymap("n", "<leader>Q", ":quitall!<CR>")
 

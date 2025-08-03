@@ -4,9 +4,11 @@ vim.g.mapleader = " "
 -- Global vim options
 vim.o.number = false
 vim.o.signcolumn = "no"
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
+vim.o.shiftwidth = 2
 vim.o.termguicolors = true
 vim.o.wrap = false
-vim.o.tabstop = 4
 vim.o.laststatus = 3
 vim.o.swapfile = false
 vim.o.winborder = "rounded"
@@ -19,9 +21,9 @@ vim.o.incsearch = true
 
 -- Diagnostics configuration
 vim.diagnostic.config({
-	virtual_text = true,
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-	severity_sort = true,
+  virtual_text = true,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = true,
 })

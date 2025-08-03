@@ -3,7 +3,7 @@ return {
 	{
 		"mini.files",
 		keys = {
-			{ "<leader>e", function() MiniFiles.open() end, desc = "Open mini files" },
+			{ "<leader>e", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end, desc = "Open mini files" },
 		},
 		before = function()
 			vim.pack.add({
