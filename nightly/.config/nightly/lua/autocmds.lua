@@ -23,9 +23,6 @@ autocmd("BufWritePre", {
 autocmd("CmdwinEnter", {
 	group = augroup("CmdwinQuit", { clear = true }),
 	callback = function(args)
-		vim.api.nvim_buf_set_keymap(
-			args.buf, "n", "q", ":quit<CR>",
-			{ noremap = true, silent = true }
-		)
+		vim.api.nvim_buf_set_keymap(args.buf, "n", "q", ":quit<CR>", { noremap = true, silent = true })
 	end,
 })

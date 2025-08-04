@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 -- Global vim options
 vim.o.number = false
 vim.o.signcolumn = "no"
+vim.o.cursorline = true
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2

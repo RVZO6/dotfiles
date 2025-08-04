@@ -5,7 +5,7 @@ return {
 		event = { "BufReadPost", "BufNewFile" },
 		before = function()
 			vim.pack.add({
-				{ src = "https://github.com/nvim-treesitter/nvim-treesitter" },
+				{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
 			})
 		end,
 		after = function()

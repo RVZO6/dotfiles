@@ -14,6 +14,7 @@ return {
 				option = { transparent = true },
 				style = {
 					WinSeparator = { fg = "#00FFFF" },
+					BlinkCmpMenuSelection = { link = "Visual" },
 					RenderMarkdownH1BG = { bg = "#552020" },
 					RenderMarkdownH2BG = { bg = "#103545" },
 					RenderMarkdownH3BG = { bg = "#404030" },

@@ -4,9 +4,11 @@ return {
 		"snacks.nvim",
 		lazy = false,
 		keys = {
-			{ "<leader>ff",      function() Snacks.picker.files() end, desc = "Find files" },
-			{ "<leader>sh",      function() Snacks.picker.help() end,  desc = "Find help" },
-			{ "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart picker" },
+			{ "<leader>ff",      function() Snacks.picker.files() end,      desc = "Find files" },
+			{ "<leader>sh",      function() Snacks.picker.help() end,       desc = "Find help" },
+			{ "<leader>sH",      function() Snacks.picker.highlights() end, desc = "Find help" },
+			{ "<leader>sg",      function() Snacks.picker.grep() end,       desc = "Find help" },
+			{ "<leader><space>", function() Snacks.picker.smart() end,      desc = "Smart picker" },
 			{
 				"<C-_>",
 				function()
