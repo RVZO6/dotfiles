@@ -47,7 +47,7 @@ return {
 		end,
 		after = function()
 			-- Enable LSP servers
-			vim.lsp.enable({ "lua_ls", "biome", "tinymist", "ts_ls", "kotlin_lsp", "emmet_ls" })
+			vim.lsp.enable({ "lua_ls", "biome", "tinymist", "vtsls", "kotlin_lsp", "emmet_ls" })
 		end,
 	},
 }

@@ -2,11 +2,11 @@
 return {
 	{
 		"snacks.nvim",
-		-- lazy = false,
+		lazy = false,
 		keys = {
-			{ "<leader>ff",    function() Snacks.picker.files() end, desc = "Find files" },
-			{ "<leader>sh",    function() Snacks.picker.help() end,  desc = "Find help" },
-			{ "<leader>space", function() Snacks.picker.smart() end, desc = "Smart picker" },
+			{ "<leader>ff",      function() Snacks.picker.files() end, desc = "Find files" },
+			{ "<leader>sh",      function() Snacks.picker.help() end,  desc = "Find help" },
+			{ "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart picker" },
 			{
 				"<C-_>",
 				function()
@@ -50,6 +50,7 @@ return {
 		after = function()
 			require("mini.icons").setup()
 			require("snacks").setup({
+				notifier = { enabled = true },
 				picker = { enabled = true },
 				terminal = { enabled = true },
 			})

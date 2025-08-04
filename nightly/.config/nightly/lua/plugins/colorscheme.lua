@@ -21,7 +21,6 @@ return {
 					RenderMarkdownH5BG = { bg = "#503015" },
 					RenderMarkdownH6BG = { bg = "#0A4040" },
 				},
-
 			})
 
 			vim.cmd("colorscheme citruszest")

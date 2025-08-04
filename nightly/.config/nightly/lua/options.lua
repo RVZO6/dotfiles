@@ -18,12 +18,13 @@ vim.o.ignorecase = true
 vim.o.smartcase = false
 vim.o.hlsearch = true
 vim.o.incsearch = true
+vim.o.showmatch = true
 
 -- Diagnostics configuration
 vim.diagnostic.config({
-  virtual_text = true,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = true,
+	virtual_text = true,
+	signs = true,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
 })
