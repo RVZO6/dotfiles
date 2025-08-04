@@ -9,6 +9,7 @@ vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
 vim.o.termguicolors = true
+vim.o.expandtab = false
 vim.o.wrap = false
 vim.o.laststatus = 3
 vim.o.swapfile = false

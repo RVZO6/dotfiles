@@ -2,7 +2,7 @@
 return {
 	{
 		"snacks.nvim",
-		lazy = false,
+		-- lazy = false,
 		keys = {
 			{ "<leader>ff",      function() Snacks.picker.files() end,      desc = "Find files" },
 			{ "<leader>sh",      function() Snacks.picker.help() end,       desc = "Find help" },
