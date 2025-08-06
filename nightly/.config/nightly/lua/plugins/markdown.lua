@@ -1,7 +1,9 @@
 return {
 	{
 		"render-markdown.nvim",
-		ft = "markdown",
+		-- for lsp buf highlight
+		event = { "LspAttach" },
+		ft = { "markdown", },
 		before = function()
 			vim.pack.add({ { src = "https://github.com/MeanderingProgrammer/render-markdown.nvim",
 			} })
@@ -17,7 +19,7 @@ return {
 	},
 	{
 		"bullets.vim",
-		ft = { "markdown", "text", "gitcommit" },
+		ft = { "markdown", "text", "gitcommit", },
 		before = function()
 			vim.pack.add({ { src = "https://github.com/bullets-vim/bullets.vim" } })
 		end,
@@ -31,7 +33,7 @@ return {
 				"<cmd>ToggleCheckbox<CR>",
 				desc = "Toggle checkbox (cascade)",
 				mode = "n",
-				ft = { "markdown", "text", "gitcommit" },
+				ft = { "markdown", "text", "gitcommit", },
 			},
 			{
 				"<leader>cx",
@@ -45,7 +47,7 @@ return {
 				end,
 				desc = "Toggle checkbox",
 				mode = "n",
-				ft = { "markdown", "text", "gitcommit" },
+				ft = { "markdown", "text", "gitcommit", },
 			},
 		},
 		after = function()
@@ -67,7 +69,7 @@ return {
 				"<leader>cp",
 				"<cmd>MarkdownPreviewToggle<cr>",
 				desc = "Markdown Preview",
-				ft = "markdown",
+				ft = { "markdown", },
 			},
 		},
 		after = function()
