@@ -1,10 +1,21 @@
--- Provides syntax highlighting for the ghostty config file
--- No additional dependencies required, Zilchmasta was kind enough to let me
--- know about this in discord
--- https://discord.com/channels/1005603569187160125/1300462095946485790/1300534513788653630
+local possible_dirs = {
+  "/Applications/Ghostty.app/Contents/Resources/vim/vimfiles/", -- macOS
+  "/usr/share/ghostty/vim/vimfiles/", -- Arch Linux
+  "/usr/local/share/ghostty/vim/vimfiles/", -- Alternative Linux path
+}
+
+local function find_ghostty_dir()
+  for _, dir in ipairs(possible_dirs) do
+    if vim.fn.isdirectory(dir) == 1 then
+      return dir
+    end
+  end
+  return nil
+end
 
 return {
   "ghostty",
-  dir = "/Applications/Ghostty.app/Contents/Resources/vim/vimfiles/",
+  dir = find_ghostty_dir(),
   lazy = false,
+  cond = find_ghostty_dir() ~= nil,
 }

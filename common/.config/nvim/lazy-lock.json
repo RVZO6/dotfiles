@@ -1,6 +1,6 @@
 {
   "LazyVim": { "branch": "main", "commit": "25abbf546d564dc484cf903804661ba12de45507" },
-  "SchemaStore.nvim": { "branch": "main", "commit": "34e3958a9afd7d1bd938b0cd9eecaa6f1925d4c4" },
+  "SchemaStore.nvim": { "branch": "main", "commit": "9ecd375f7c261f622bd811ecebcddd59bf5e9de2" },
   "blink.cmp": { "branch": "main", "commit": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8" },
   "bufferline.nvim": { "branch": "main", "commit": "655133c3b4c3e5e05ec549b9f8cc2894ac6f51b3" },
   "bullets.vim": { "branch": "master", "commit": "1c13e510e11d08b0259e8e627f128359c5521962" },
@@ -39,15 +39,15 @@
   "nvim-ts-autotag": { "branch": "main", "commit": "a1d526af391f6aebb25a8795cbc05351ed3620b5" },
   "persistence.nvim": { "branch": "main", "commit": "166a79a55bfa7a4db3e26fc031b4d92af71d0b51" },
   "plenary.nvim": { "branch": "master", "commit": "b9fd5226c2f76c951fc8ed5923d85e4de065e509" },
-  "render-markdown.nvim": { "branch": "main", "commit": "eec00fbfd7273cdfa0a1154dbef0bb983641eaf8" },
-  "smart-splits.nvim": { "branch": "master", "commit": "f46b79cf9e83b0a13a4e3f83e3bd5b0d2f172bf2" },
+  "render-markdown.nvim": { "branch": "main", "commit": "3d84dbc1f80a2a02e560ddbd5ab29f99f88bbeda" },
+  "smart-splits.nvim": { "branch": "master", "commit": "5e8baa74058ee07efd77ab3c6afdb5b0bf65b6ca" },
   "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "telescope.nvim": { "branch": "master", "commit": "b4da76be54691e854d3e0e02c36b0245f945c2c7" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" },
   "tokyonight.nvim": { "branch": "main", "commit": "057ef5d260c1931f1dffd0f052c685dcd14100a3" },
   "trouble.nvim": { "branch": "main", "commit": "85bedb7eb7fa331a2ccbecb9202d8abba64d37b3" },
   "ts-comments.nvim": { "branch": "main", "commit": "1bd9d0ba1d8b336c3db50692ffd0955fe1bb9f0c" },
-  "venv-selector.nvim": { "branch": "regexp", "commit": "df18bd163fff7fb50523876aae1ef47da3e320ac" },
+  "venv-selector.nvim": { "branch": "regexp", "commit": "8d7224af54a02f9385c4f77eadf21e5b2407d860" },
   "which-key.nvim": { "branch": "main", "commit": "370ec46f710e058c9c1646273e6b225acf47cbed" },
   "xcodebuild.nvim": { "branch": "main", "commit": "4e013d5f24567380a51efee8ab9fac9c24d429cd" }
 }
