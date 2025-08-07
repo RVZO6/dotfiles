@@ -1,0 +1,46 @@
+# This file contains fish universal variable definitions.
+# VERSION: 3.0
+SETUVAR --export ANDROID_HOME:/opt/homebrew/share/android\x2dcommandlinetools
+SETUVAR --export BUN_INSTALL:/Users/ryan/\x2ebun
+SETUVAR --export CPPFLAGS:\x2dI/opt/homebrew/opt/libpq/include
+SETUVAR --export EDITOR:nvim
+SETUVAR --export JAVA_HOME:/Library/Java/JavaVirtualMachines/temurin\x2d17\x2ejdk/Contents/Home
+SETUVAR --export LDFLAGS:\x2dL/opt/homebrew/opt/libpq/lib
+SETUVAR --export --path PKG_CONFIG_PATH:/opt/homebrew/opt/libpq/lib/pkgconfig
+SETUVAR --export PNPM_HOME:/Users/ryan/Library/pnpm
+SETUVAR --export SKIM_DEFAULT_COMMAND:fd
+SETUVAR --export UV_PYTHON_PREFERENCE:managed
+SETUVAR --export XDG_CONFIG_HOME:/Users/ryan/\x2econfig
+SETUVAR __fish_initialized:3800
+SETUVAR fifc_keybinding:\x07
+SETUVAR fifc_open_keybinding:ctrl\x2do
+SETUVAR fish_color_autosuggestion:brblack
+SETUVAR fish_color_cancel:\x2dr
+SETUVAR fish_color_command:normal
+SETUVAR fish_color_comment:red
+SETUVAR fish_color_cwd:green
+SETUVAR fish_color_cwd_root:red
+SETUVAR fish_color_end:green
+SETUVAR fish_color_error:brred
+SETUVAR fish_color_escape:brcyan
+SETUVAR fish_color_history_current:\x2d\x2dbold
+SETUVAR fish_color_host:normal
+SETUVAR fish_color_host_remote:yellow
+SETUVAR fish_color_normal:normal
+SETUVAR fish_color_operator:brcyan
+SETUVAR fish_color_param:cyan
+SETUVAR fish_color_quote:yellow
+SETUVAR fish_color_redirection:cyan\x1e\x2d\x2dbold
+SETUVAR fish_color_search_match:white\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_selection:white\x1e\x2d\x2dbold\x1e\x2d\x2dbackground\x3dbrblack
+SETUVAR fish_color_status:red
+SETUVAR fish_color_user:brgreen
+SETUVAR fish_color_valid_path:\x2d\x2dunderline
+SETUVAR fish_key_bindings:fish_vi_key_bindings
+SETUVAR fish_pager_color_completion:normal
+SETUVAR fish_pager_color_description:yellow\x1e\x2di
+SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
+SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/opt/homebrew/share/android\x2dcommandlinetools/emulator\x1e/opt/homebrew/share/android\x2dcommandlinetools/cmdline\x2dtools/latest/bin\x1e/Users/ryan/Library/pnpm\x1e/opt/homebrew/opt/libpq/bin\x1e/opt/homebrew/bin\x1e/Users/ryan/\x2elocal/share/bob/nvim\x2dbin\x1e/Users/ryan/\x2elocal/scripts\x1e/Users/ryan/\x2ebun/bin
+SETUVAR fish_vi_key_timeout:100

@@ -1,0 +1,31 @@
+font-family = "JetBrainsMono Nerd Font"
+font-style = "SemiBold"
+font-style-italic = "SemiBold Italic"
+font-style-bold = "ExtraBold"
+font-style-bold-italic = "ExtraBold Italic"
+
+background-opacity = 0.9
+theme = citruszest
+macos-titlebar-style = hidden
+window-padding-x = 21
+font-size = 16
+macos-option-as-alt = left
+background-blur = 40
+confirm-close-surface = false
+
+keybind="cmd+c=copy_to_clipboard"
+mouse-hide-while-typing = true
+scrollback-limit = 1000000
+
+shell-integration = fish
+
+keybind = global:cmd+slash=toggle_quick_terminal
+quick-terminal-position = bottom
+quick-terminal-animation-duration = 0
+
+# custom-shader = shaders/cursor_smear.glsl
+# custom-shader = shaders/cursor_frozen.glsl
+# custom-shader = ./shaders/debug_cursor_animated.glsl
+# custom-shader = ./shaders/cursor_smear_fade.glsl
+# custom-shader = ./shaders/cusor_smear_fade_tapered.glsl
+# custom-shader = ./shaders/simple_animated_cursor.glsl

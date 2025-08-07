@@ -1,0 +1,44 @@
+# Lazygit theme: CitrusZest
+# Generated based on citruszest.nvim palette (https://neovimcraft.com/plugin/zootedb0t/citruszest.nvim)
+# Background and foreground derived from citruszest colorscheme
+
+gui:
+  theme:
+    # Borders
+    activeBorderColor:
+      - "#00BFFF"  # Blue for floating note windows border from citruszest.nvim palette
+      - bold       # Emphasize active border
+    inactiveBorderColor:
+      - "#767C77"  # Muted blue for inactive border
+
+    # Text
+    optionsTextColor:
+      - "#00BFFF"  # Blue from palette for options labels  
+    defaultFgColor:
+      - "#BFBFBF"  # Default text (White)  
+
+    # Selection
+    selectedLineBgColor:
+      - "#383838"  # Cursor background color for selected line  
+    selectedRangeBgColor:
+      - "#404040"  # Visual selection background  
+
+    # Commits & Changes
+    cherryPickedCommitBgColor:
+      - "#FFAA54"  # Bright Orange for cherry-picked commit background  
+    cherryPickedCommitFgColor:
+      - "#FF7431"  # Orange for commit text  
+    unstagedChangesColor:
+      - "#FF5454"  # Red for unstaged changes  
+    stagedChangesColor:
+      - "#00CC7A"  # Green for staged changes  
+
+    # Merge Conflicts and Search
+    mergeConflictsColor:
+      - "#FFD700"  # Yellow for conflicts  
+    searchingActiveBorderColor:
+      - "#FFD700"  # Yellow to highlight active search border
+
+    # Floating note windows
+# citruszest.nvim palette for consistency.
+
