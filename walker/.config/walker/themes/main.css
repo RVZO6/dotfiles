@@ -1,0 +1,283 @@
+/* GTK Material Design Theme with Custom Color Palette */
+@import url("file:///home/ryan/.cache/matugen/colours.css");
+
+/* Reset all elements */
+#window,
+#box,
+#aiScroll,
+#aiList,
+#search,
+#password,
+#input,
+#prompt,
+#clear,
+#typeahead,
+#list,
+child,
+scrollbar,
+slider,
+#item,
+#text,
+#label,
+#bar,
+#sub,
+#activationlabel {
+	all: unset;
+}
+
+/* Main window - wider than tall aspect ratio */
+#window {
+	color: @on_background;
+	font-family: "JetBrainsMono Nerd Font";
+	font-weight: 600;
+	/* Semibold */
+	font-size: 15px;
+	/* Increased font size */
+}
+
+/* Main container with subtle elevation */
+#box {
+	border-radius: 28px;
+	/* Large rounded corners for Material Design */
+	background: @surface_container;
+	padding: 20px 24px;
+	margin: 8px;
+	min-width: 600px;
+	/* Smaller width */
+	min-height: 450px;
+	/* Smaller height */
+	/* max-width: 680px; */
+	/* Constrain maximum width */
+	box-shadow: 0px 4px 12px alpha(@shadow, 0.15);
+	border: 1px solid @outline_variant;
+}
+
+/* Search container with Material Design styling */
+#search {
+	background: @surface_container_high;
+	border-radius: 16px;
+	padding: 10px 14px;
+	/* Slightly smaller padding */
+	margin-bottom: 16px;
+	box-shadow: 0px 2px 4px alpha(@shadow, 0.1);
+	border: 1px solid @outline_variant;
+	transition: all 200ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+#search:focus-within {
+	border-color: @primary;
+	box-shadow:
+		0px 2px 4px alpha(@shadow, 0.1),
+		0px 0px 0px 2px alpha(@primary, 0.12);
+}
+
+/* Input styling */
+#input {
+	background: none;
+	color: @on_surface;
+	font-size: 15px;
+	/* Match window font size */
+	font-weight: 600;
+	/* Match window font weight */
+	/* Slightly taller for larger font */
+	caret-color: @primary;
+	/* Center text vertically */
+}
+
+#input placeholder {
+	color: alpha(@on_surface_variant, 0.6);
+}
+
+/* Prompt indicator */
+#prompt {
+	color: @primary;
+	margin-right: 12px;
+	font-weight: 500;
+}
+
+/* Clear button */
+#clear {
+	color: @on_surface_variant;
+	padding: 4px 8px;
+	border-radius: 12px;
+	transition: all 200ms ease;
+}
+
+#clear:hover {
+	background: alpha(@on_surface, 0.08);
+	color: @on_surface;
+}
+
+/* Typeahead */
+#typeahead {
+	color: alpha(@on_surface_variant, 0.7);
+	font-style: italic;
+	font-size: 15px;
+	/* Match input font size */
+	font-weight: 600;
+}
+
+/* Password field */
+#password {
+	background: @surface_container_high;
+	color: @on_surface;
+	border-radius: 12px;
+	padding: 8px 12px;
+	border: 1px solid @outline_variant;
+}
+
+/* List container */
+#list {
+	border-radius: 16px;
+	background: @surface_container_low;
+	padding: 8px;
+}
+
+/* List items with Material Design interaction states */
+child {
+	padding: 12px 16px;
+	border-radius: 12px;
+	margin: 2px 0;
+	transition: all 200ms cubic-bezier(0.2, 0.0, 0, 1.0);
+}
+
+child:hover {
+	background: alpha(@primary, 0.08);
+}
+
+child:selected {
+	background: alpha(@primary, 0.12);
+	color: @primary;
+}
+
+child:active {
+	background: alpha(@primary, 0.16);
+}
+
+/* Item content */
+#item {
+	/* display: flex; */
+	/* align-items: center; */
+}
+
+#icon {
+	margin-right: 12px;
+	color: @primary;
+	min-width: 24px;
+	min-height: 24px;
+}
+
+#text {
+	color: @on_surface;
+}
+
+#label {
+	font-weight: 500;
+	color: @on_surface;
+}
+
+#sub {
+	color: @on_surface_variant;
+	font-size: 12px;
+	margin-top: 2px;
+}
+
+/* Scrollbar styling */
+scrollbar {
+	background: transparent;
+	border-radius: 12px;
+}
+
+scrollbar slider {
+	background: alpha(@on_surface_variant, 0.3);
+	border-radius: 12px;
+	margin: 2px;
+	min-width: 8px;
+	min-height: 8px;
+}
+
+scrollbar slider:hover {
+	background: alpha(@on_surface_variant, 0.5);
+}
+
+scrollbar slider:active {
+	background: alpha(@on_surface_variant, 0.7);
+}
+
+/* Progress/loading states */
+#spinner {
+	color: @primary;
+	padding: 12px;
+}
+
+/* Bar elements */
+#bar {
+	background: @surface_container;
+	border-radius: 8px;
+	padding: 4px 8px;
+}
+
+.barentry {
+	background: @surface_container_high;
+	border-radius: 6px;
+	padding: 2px 6px;
+	margin: 2px;
+}
+
+/* Activation states */
+.activation #activationlabel {
+	color: @primary;
+	font-weight: 600;
+}
+
+.activation #text,
+.activation #icon,
+.activation #search {
+	opacity: 0.6;
+}
+
+/* AI Chat specific styling */
+.aiItem {
+	padding: 16px;
+	border-radius: 16px;
+	margin: 8px 0;
+	line-height: 1.6;
+}
+
+.aiItem.user {
+	background: @primary_container;
+	color: @on_primary_container;
+	margin-left: 48px;
+	border-bottom-right-radius: 4px;
+}
+
+.aiItem.assistant {
+	background: @surface_container_high;
+	color: @on_surface;
+	margin-right: 48px;
+	border-bottom-left-radius: 4px;
+	border: 1px solid @outline_variant;
+}
+
+/* Error states */
+#cfgerr {
+	background: @error_container;
+	color: @on_error_container;
+	border-radius: 12px;
+	padding: 12px 16px;
+	margin: 16px 0;
+	border-left: 4px solid @error;
+	font-weight: 500;
+}
+
+/* Focus indicators for accessibility */
+#input:focus,
+#password:focus {
+	outline: 2px solid @primary;
+	outline-offset: 2px;
+}
+
+child:focus {
+	outline: 2px solid @primary;
+	outline-offset: -2px;
+}

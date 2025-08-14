@@ -1,0 +1,14 @@
+[config.wallpaper]
+command = "/home/ryan/.local/bin/switch-wallpaper.sh"
+arguments = []
+set = true
+
+[templates.css]
+input_path = "~/.config/matugen/templates/colours.css.tpl"
+output_path = "~/.cache/matugen/colours.css"
+post_hook = ""  # optional: add a reload command if you need one
+
+[templates.json]
+input_path = "~/.config/matugen/templates/colours.json.tpl"
+output_path = "~/.cache/matugen/colours.json"
+post_hook = ""
