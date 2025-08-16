@@ -15,7 +15,6 @@ sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-ke
 echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf >/dev/null
 echo "Installing paru..."
 sudo pacman -Sy --needed --noconfirm paru
-echo -e '\nColor\nILoveCandy' | sudo tee -a /etc/pacman.conf >/dev/null
 
 sudo pacman -Sy
 
@@ -33,8 +32,11 @@ sudo sed -i 's/^MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
 sudo mkinitcpio -P
 
 echo "Stowing dotfiles..."
+mkdir -p ~/.config/hypr
 stow -d . -t ~ common
-stow -d . -t ~ linux
+for pkg in linux/*/; do
+    stow -d linux -t ~ "$(basename "$pkg")"
+done
 
 echo "installing ax-shell"
 ./ax-shell.sh
