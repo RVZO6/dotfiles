@@ -38,7 +38,7 @@ PACKAGES=(
   python-toml
   python-watchdog
   swappy
-  swww-git
+  swww
   tesseract
   tmux
   ttf-nerd-fonts-symbols-mono
