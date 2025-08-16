@@ -1,14 +1,54 @@
+[config.custom_colors.yellow]
+color = "#FFFF00"
+blend = true
+
 [config.wallpaper]
-command = "/home/ryan/.local/bin/switch-wallpaper.sh"
-arguments = []
+command = "swww"
+arguments = ["img", "--transition-type", "center"]
 set = true
 
-[templates.css]
-input_path = "~/.config/matugen/templates/colours.css.tpl"
+[templates.gtk-css]
+input_path = "~/.config/matugen/templates/gtk-colours.css.tpl"
 output_path = "~/.cache/matugen/colours.css"
-post_hook = ""  # optional: add a reload command if you need one
+post_hook = """
+# Reload swayosd
+pkill swayosd-server && swayosd-server &
+"""
 
-[templates.json]
-input_path = "~/.config/matugen/templates/colours.json.tpl"
+[templates.quickshell]
+input_path = "~/.config/matugen/templates/quickshell.json.tpl"
 output_path = "~/.cache/matugen/colours.json"
 post_hook = ""
+
+[templates.alacritty]
+input_path = '~/.config/matugen/templates/alacritty.toml.tpl'
+output_path = '~/.config/alacritty/colours.toml'
+post_hook = 'touch ~/.config/alacritty/alacritty.toml'
+
+[templates.pywalfox]
+input_path = '~/.config/matugen/templates/pywalfox.json.tpl'
+output_path = '~/.cache/wal/colors.json'
+post_hook = 'pywalfox update'
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland.conf.tpl'
+output_path = '~/.config/hypr/colours.conf'
+post_hook = 'hyprctl reload'
+
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk.css.tpl'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk.css.tpl'
+output_path = '~/.config/gtk-4.0/colors.css'
+post_hook = ''
+
+[templates.starship]
+input_path = '~/.config/matugen/templates/starship-colors.toml'
+output_path = '~/.config/starship.toml'
+
+[templates.helix]
+input_path = '~/.config/matugen/templates/helix.toml'
+output_path = '~/.config/helix/themes/matugen.toml'

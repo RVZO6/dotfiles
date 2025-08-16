@@ -25,14 +25,14 @@ slider,
 	all: unset;
 }
 
+* {
+	font-family: "JetBrainsMono Nerd Font";
+	font-size: 16;
+	font-weight: 600;
+}
 /* Main window - wider than tall aspect ratio */
 #window {
 	color: @on_background;
-	font-family: "JetBrainsMono Nerd Font";
-	font-weight: 600;
-	/* Semibold */
-	font-size: 15px;
-	/* Increased font size */
 }
 
 /* Main container with subtle elevation */
@@ -77,7 +77,6 @@ slider,
 	color: @on_surface;
 	font-size: 15px;
 	/* Match window font size */
-	font-weight: 600;
 	/* Match window font weight */
 	/* Slightly taller for larger font */
 	caret-color: @primary;
@@ -92,7 +91,6 @@ slider,
 #prompt {
 	color: @primary;
 	margin-right: 12px;
-	font-weight: 500;
 }
 
 /* Clear button */
@@ -114,7 +112,6 @@ slider,
 	font-style: italic;
 	font-size: 15px;
 	/* Match input font size */
-	font-weight: 600;
 }
 
 /* Password field */
@@ -172,7 +169,6 @@ child:active {
 }
 
 #label {
-	font-weight: 500;
 	color: @on_surface;
 }
 
@@ -182,26 +178,28 @@ child:active {
 	margin-top: 2px;
 }
 
-/* Scrollbar styling */
+/* Hide scrollbar completely */
 scrollbar {
 	background: transparent;
-	border-radius: 12px;
+	min-width: 0px;
+	min-height: 0px;
+}
+
+scrollbar trough {
+	background: transparent;
+	border: none;
+	min-width: 0px;
+	min-height: 0px;
 }
 
 scrollbar slider {
-	background: alpha(@on_surface_variant, 0.3);
-	border-radius: 12px;
-	margin: 2px;
-	min-width: 8px;
-	min-height: 8px;
+	background: transparent;
+	min-width: 0px;
+	min-height: 0px;
 }
 
-scrollbar slider:hover {
-	background: alpha(@on_surface_variant, 0.5);
-}
-
-scrollbar slider:active {
-	background: alpha(@on_surface_variant, 0.7);
+.scrollbar {
+	display: none;
 }
 
 /* Progress/loading states */
@@ -227,7 +225,6 @@ scrollbar slider:active {
 /* Activation states */
 .activation #activationlabel {
 	color: @primary;
-	font-weight: 600;
 }
 
 .activation #text,
@@ -267,7 +264,6 @@ scrollbar slider:active {
 	padding: 12px 16px;
 	margin: 16px 0;
 	border-left: 4px solid @error;
-	font-weight: 500;
 }
 
 /* Focus indicators for accessibility */

@@ -27,7 +27,7 @@ entries() {
     base="${path##*/}"
     esc=$(shell_quote "$path")
     # kv line: keys separated by semicolons
-    echo "label=${base};image=${path};exec=matugen image -t scheme-fruit-salad ${esc};exec_alt=wl-copy < ${esc};drag_drop=true;drag_drop_data=${path};class=wallpaper;matching=1;value=${path}"
+    echo "label=${base};image=${path};exec=matugen image ${esc};exec_alt=wl-copy < ${esc};drag_drop=true;drag_drop_data=${path};class=wallpaper;matching=1;value=${path}"
   done
 }
 
