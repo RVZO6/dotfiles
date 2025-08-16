@@ -9,16 +9,16 @@ echo "Installing development tools..."
 sudo pacman -S --needed --noconfirm base-devel
 
 echo "Installing Chaotic AUR..."
-sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
+sudo pacman-key --recv-key 3056513887B78AEB
 sudo pacman-key --lsign-key 3056513887B78AEB
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.xz'
-sudo pacman -U 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.xz'
-
-echo -e "\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist" | sudo tee -a /etc/pacman.conf
+sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-keyring.pkg.tar.zst' 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mirrorlist.pkg.tar.zst'
+echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf >/dev/null
+echo "Installing paru..."
+sudo pacman -Sy --needed --noconfirm paru
+echo -e '\nColor\nILoveCandy' | sudo tee -a /etc/pacman.conf >/dev/null
 
 sudo pacman -Sy
 
-echo "Installing paru..."
 sudo pacman -S --needed --noconfirm paru
 
 echo "Installing NVIDIA drivers..."
