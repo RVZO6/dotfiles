@@ -23,6 +23,9 @@ sudo pacman -S --needed --noconfirm paru
 echo "Installing NVIDIA drivers..."
 sudo pacman -S --needed --noconfirm nvidia-open nvidia-utils
 
+echo "Installing Hyprland..."
+sudo pacman -S --needed --noconfirm hyprland
+
 echo "Installing stow..."
 sudo pacman -S --needed --noconfirm stow
 
