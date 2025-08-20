@@ -20,19 +20,54 @@ sudo pacman -Sy
 
 sudo pacman -S --needed --noconfirm paru
 
-echo "Installing NVIDIA drivers..."
-sudo pacman -S --needed --noconfirm nvidia-open nvidia-utils
+echo "Detecting environment..."
+if systemd-detect-virt &>/dev/null; then
+    VIRT_TYPE=$(systemd-detect-virt)
+    echo "Running in a virtual machine: ${VIRT_TYPE}. Installing VM-specific drivers..."
+    case "${VIRT_TYPE}" in
+        qemu|kvm)
+            sudo pacman -S --needed --noconfirm qemu-guest-agent spice-vdagent xf86-video-qxl
+            ;;
+        vmware)
+            sudo pacman -S --needed --noconfirm open-vm-tools
+            sudo systemctl enable vmtoolsd
+            ;;
+        oracle|vbox)
+            sudo pacman -S --needed --noconfirm virtualbox-guest-utils
+            sudo systemctl enable vboxservice
+            ;;
+        *)
+            echo "Unknown VM type. Installing generic video drivers..."
+            sudo pacman -S --needed --noconfirm mesa
+            ;;
+    esac
+else
+    echo "Running on physical hardware. Detecting graphics card..."
+    if lspci | grep -E "VGA|3D" | grep -iq "NVIDIA"; then
+        echo "NVIDIA card detected. Installing NVIDIA drivers..."
+        sudo pacman -S --needed --noconfirm nvidia-open nvidia-utils
+
+        echo "Modifying mkinitcpio for NVIDIA..."
+        sudo cp /etc/mkinitcpio.conf /etc/mkinitcpio.conf.backup
+        sudo sed -i 's/^MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
+        sudo mkinitcpio -P
+    elif lspci | grep -E "VGA|3D" | grep -iq "AMD"; then
+        echo "AMD card detected. Installing AMD drivers..."
+        sudo pacman -S --needed --noconfirm mesa lib32-mesa xf86-video-amdgpu vulkan-radeon lib32-vulkan-radeon
+    elif lspci | grep -E "VGA|3D" | grep -iq "Intel"; then
+        echo "Intel card detected. Installing Intel drivers..."
+        sudo pacman -S --needed --noconfirm mesa lib32-mesa xf86-video-intel vulkan-intel lib32-vulkan-intel
+    else
+        echo "No NVIDIA, AMD, or Intel graphics card detected. Installing generic video drivers..."
+        sudo pacman -S --needed --noconfirm mesa
+    fi
+fi
 
 echo "Installing Hyprland..."
 sudo pacman -S --needed --noconfirm hyprland
 
 echo "Installing stow..."
 sudo pacman -S --needed --noconfirm stow
-
-echo "Modifying mkinitcpio..."
-sudo cp /etc/mkinitcpio.conf /etc/mkinitcpio.conf.backup
-sudo sed -i 's/^MODULES=()/MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)/' /etc/mkinitcpio.conf
-sudo mkinitcpio -P
 
 echo "Stowing dotfiles..."
 mkdir -p ~/.config/hypr
