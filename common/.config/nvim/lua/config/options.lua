@@ -3,6 +3,7 @@ vim.opt.relativenumber = false -- Disable relative line numbers
 vim.opt.spell = false
 vim.opt.signcolumn = "no" -- no side column
 vim.o.winborder = "rounded" -- rounded borders on windows
+vim.o.swapfile = false
 vim.o.cmdheight = 0
 vim.o.laststatus = 3
 vim.o.statusline = table.concat({
