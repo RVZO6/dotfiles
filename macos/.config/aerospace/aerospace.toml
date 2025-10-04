@@ -77,7 +77,6 @@ outer.right = 10
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
 [mode.main.binding]
-alt-space = ['mode alt']
 cmd-ctrl-alt-1 = 'workspace 1'
 cmd-ctrl-alt-2 = 'workspace 2'
 cmd-ctrl-alt-3 = 'workspace 3'
@@ -114,140 +113,51 @@ cmd-ctrl-alt-k = [
   'focus --ignore-floating --boundaries-action stop up',
   'move-mouse window-force-center',
 ]
-
-# 'alt' binding mode declaration
-[mode.alt.binding]
-alt-space = ['mode main']
-esc = ['mode main']
-backtick = ['reload-config', 'mode main']
-
-slash = 'layout tiles horizontal vertical'
-comma = 'layout accordion horizontal vertical'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#focus
-h = [
-  'focus --ignore-floating --boundaries-action stop left',
-  'move-mouse window-force-center',
-  'mode main',
-]
-l = [
-  'focus --ignore-floating --boundaries-action stop right',
-  'move-mouse window-force-center',
-  'mode main',
-]
-j = [
-  'focus --ignore-floating --boundaries-action stop down',
-  'move-mouse window-force-center',
-  'mode main',
-]
-k = [
-  'focus --ignore-floating --boundaries-action stop up',
-  'move-mouse window-force-center',
-  'mode main',
-]
-
-c = ['move-mouse window-force-center', 'mode main']
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move
-shift-h = ['move left', 'mode main']
-shift-j = ['move down', 'mode main']
-shift-k = ['move up', 'mode main']
-shift-l = ['move right', 'mode main']
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#resize
-minus = 'resize smart -64'
-equal = 'resize smart +64'
-shift-minus = 'resize smart -128'
-shift-equal = 'resize smart +128'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace
-u = 'workspace prev'
-i = 'workspace next'
-shift-u = 'move-node-to-workspace prev'
-shift-i = 'move-node-to-workspace next'
-1 = ['workspace 1', 'mode main']
-2 = ['workspace 2', 'mode main']
-3 = ['workspace 3', 'mode main']
-4 = ['workspace 4', 'mode main']
-5 = ['workspace 5', 'mode main']
-6 = ['workspace 6', 'mode main']
-7 = ['workspace 7', 'mode main']
-8 = ['workspace 8', 'mode main']
-9 = ['workspace 9', 'mode main']
-0 = ['workspace 10', 'mode main']
-p = ['focus-monitor prev', 'move-mouse window-force-center']
-n = ['focus-monitor next', 'move-mouse window-force-center']
-shift-p = 'move-workspace-to-monitor prev'
-shift-n = 'move-workspace-to-monitor next'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
-shift-1 = 'move-node-to-workspace 1'
-shift-2 = 'move-node-to-workspace 2'
-shift-3 = 'move-node-to-workspace 3'
-shift-4 = 'move-node-to-workspace 4'
-shift-5 = 'move-node-to-workspace 5'
-shift-6 = 'move-node-to-workspace 6'
-shift-7 = 'move-node-to-workspace 7'
-shift-8 = 'move-node-to-workspace 8'
-shift-9 = 'move-node-to-workspace 9'
-shift-0 = 'move-node-to-workspace 10'
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
-tab = 'workspace-back-and-forth'
-# See: https://nikitabobko.github.io/AeroSpace/commands#move-workspace-to-monitor
-shift-tab = 'move-workspace-to-monitor --wrap-around next'
-
-shift-r = ['flatten-workspace-tree', 'mode main'] # reset layout
-#s = ['layout sticky tiling', 'mode alt'] # sticky is not yet supported https://github.com/nikitabobko/AeroSpace/issues/2
-f = ['fullscreen', 'mode main'] # Toggle between fullscreen
-shift-f = [
-  'layout floating tiling',
-  'mode alt',
-] # Toggle between floating and tiling layout
-
-# See: https://nikitabobko.github.io/AeroSpace/commands#mode
-r = 'mode resize'
-v = 'mode visual'
-w = 'mode workspace'
-
-[mode.resize.binding]
-esc = 'mode main'
-h = ['resize width -64']
-j = ['resize height -64']
-k = ['resize height +64']
-l = ['resize width +64']
-shift-h = ['resize width -8']
-shift-j = ['resize height -8']
-shift-k = ['resize height +8']
-shift-l = ['resize width +8']
-s = 'mode visual'
-w = 'mode workspace'
-minus = 'resize smart -64'
-equal = 'resize smart +64'
-shift-minus = 'resize smart -128'
-shift-equal = 'resize smart +128'
-
-[mode.visual.binding]
-esc = 'mode main'
-h = ['join-with left', 'mode main']
-j = ['join-with down', 'mode main']
-k = ['join-with up', 'mode main']
-l = ['join-with right', 'mode main']
-r = 'mode resize'
-w = 'mode workspace'
-
-[mode.workspace.binding]
-esc = 'mode main'
-h = ['workspace prev']
-l = ['workspace next']
-j = ['focus-monitor next']
-k = ['focus-monitor prev']
-shift-h = ['move-node-to-workspace prev']
-shift-l = ['move-node-to-workspace next']
-shift-k = ['move-node-to-monitor prev']
-shift-j = ['move-node-to-monitor next']
-r = 'mode resize'
-s = 'mode visual'
+cmd-ctrl-alt-slash = 'layout tiles horizontal vertical'
+cmd-ctrl-alt-comma = 'layout accordion horizontal vertical'
+cmd-ctrl-alt-minus = 'resize smart -64'
+cmd-ctrl-alt-equal = 'resize smart +64'
+cmd-ctrl-alt-shift-minus = 'resize smart -128'
+cmd-ctrl-alt-shift-equal = 'resize smart +128'
+cmd-ctrl-alt-u = 'workspace prev'
+cmd-ctrl-alt-i = 'workspace next'
+cmd-ctrl-alt-shift-u = 'move-node-to-workspace prev'
+cmd-ctrl-alt-shift-i = 'move-node-to-workspace next'
+cmd-ctrl-alt-p = ['focus-monitor prev', 'move-mouse window-force-center']
+cmd-ctrl-alt-n = ['focus-monitor next', 'move-mouse window-force-center']
+cmd-ctrl-alt-shift-p = 'move-workspace-to-monitor prev'
+cmd-ctrl-alt-shift-n = 'move-workspace-to-monitor next'
+cmd-ctrl-alt-tab = 'workspace-back-and-forth'
+cmd-ctrl-alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
+cmd-ctrl-alt-shift-r = 'flatten-workspace-tree'
+cmd-ctrl-alt-f = 'fullscreen'
+cmd-ctrl-alt-v = 'layout floating tiling'
+cmd-ctrl-alt-c = 'move-mouse window-force-center'
+cmd-ctrl-alt-backtick = 'reload-config'
+cmd-ctrl-alt-shift-h = 'move left'
+cmd-ctrl-alt-shift-j = 'move down'
+cmd-ctrl-alt-shift-k = 'move up'
+cmd-ctrl-alt-shift-l = 'move right'
+cmd-ctrl-alt-f1 = 'resize width -64'
+cmd-ctrl-alt-f2 = 'resize height -64'
+cmd-ctrl-alt-f3 = 'resize height +64'
+cmd-ctrl-alt-f4 = 'resize width +64'
+cmd-ctrl-alt-shift-f1 = 'resize width -8'
+cmd-ctrl-alt-shift-f2 = 'resize height -8'
+cmd-ctrl-alt-shift-f3 = 'resize height +8'
+cmd-ctrl-alt-shift-f4 = 'resize width +8'
+cmd-ctrl-alt-f5 = 'join-with left'
+cmd-ctrl-alt-f6 = 'join-with down'
+cmd-ctrl-alt-f7 = 'join-with up'
+cmd-ctrl-alt-f8 = 'join-with right'
+cmd-ctrl-alt-f9 = 'workspace prev'
+cmd-ctrl-alt-f10 = 'workspace next'
+cmd-ctrl-alt-f11 = 'focus-monitor next'
+cmd-ctrl-alt-f12 = 'focus-monitor prev'
+cmd-ctrl-alt-shift-f9 = 'move-node-to-workspace prev'
+cmd-ctrl-alt-shift-f10 = 'move-node-to-workspace next'
+cmd-ctrl-alt-shift-f11 = 'move-node-to-monitor next'
+cmd-ctrl-alt-shift-f12 = 'move-node-to-monitor prev'
 
 #
 # Application-specific configurations (optional)
