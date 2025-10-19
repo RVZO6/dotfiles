@@ -4,6 +4,10 @@ return {
 
   -- from lua/plugins/*lualine.lua
   {
+    "folke/noice.nvim",
+    enabled = false,
+  },
+  {
     "nvim-lualine/lualine.nvim",
     enabled = false,
   },
