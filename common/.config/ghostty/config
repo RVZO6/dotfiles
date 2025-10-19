@@ -17,7 +17,8 @@ keybind="cmd+c=copy_to_clipboard"
 mouse-hide-while-typing = true
 scrollback-limit = 1000000
 
-shell-integration = fish
+# shell-integration = nu
+command = /opt/homebrew/bin/nu
 
 keybind = global:cmd+slash=toggle_quick_terminal
 quick-terminal-position = bottom

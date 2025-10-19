@@ -1,0 +1,189 @@
+clear
+explore
+brew
+brew install elvish
+clear
+ls | explore
+clear
+ghostty +list-themes
+gh
+ghostty +list-themes
+cd ghostty
+ls
+eza
+nvim config
+clear
+cd
+claer
+clear
+ls
+nvim
+opencode
+clear
+clear
+ls
+cd tmu
+z
+zoxide
+clear
+ls
+clear
+cd .config
+cd tmux
+;s
+ls
+clear
+yazi
+ls
+nvim tmux.conf
+rename
+mv tmux.conf tmux.conf.old
+ls
+nvim tmux.conf
+ls
+nvim tmux.conf
+tmux 
+clear
+config nu
+$nu.config-path<\n>
+mkdir -p ~/.config/nushell<\n>nu -c 'config nu generate --path ~/.config/nushell/config.nu'<\n>
+mkdir ~/.config/nushell
+ls
+cd
+ls
+cd con
+ls
+cd .config
+ls
+cd nushell
+ls
+mkdir -p ~/.config/nushell<\n>nu -c 'config nu generate --path ~/.config/nushell/config.nu'<\n>
+nu -c 'config nu generate --path ~/.config/nushell/config.nu'
+config nu 
+$nu.config-path
+nvim /Users/ryan/Library/Application Support/nushell/config.nu
+nvim "/Users/ryan/Library/Application Support/nushell/config.nu"
+$nu.env-path
+nvim "/Users/ryan/Library/Application Support/nushell/env.nu"
+config nu 
+clear
+config nu
+nvim "/Users/ryan/Library/Application Support/nushell/env.nu"
+clear
+nu config
+config nu
+ln -s ~"/Library/Application Support/" ~/config
+cd .config
+cd ~/.config
+ls
+rm -r nushell
+ls
+ln -s ~"/Library/Application Support/" ~/config
+ls
+cd nushell
+config nu
+clear
+nvim
+fzf
+clear
+ls /Applications ~/Applications | where type == File | get name | str trim | clip<\n>
+ls /Applications | get name | to text | pbcopy
+clear
+ls /Applications/**/*.app | each { |app| { name: ($app.name | path basename), bundle_id: (do { /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' $"($app.name)/Contents/Info.plist" } | complete | get stdout | str trim) } } | where bundle_id != ""
+ls /Applications/*.app | each { |app| <\n>    let bundle_id = (do { /usr/libexec/PlistBuddy -c 'Print CFBundleIdentifier' $"($app.name)/Contents/Info.plist" } | complete | get stdout | str trim)<\n>    { name: ($app.name | path basename), bundle_id: $bundle_id }<\n>} | where bundle_id != "" | uniq-by bundle_id | to text | pbcopy
+clear
+ls
+cd config
+ls
+cd ..
+clear
+cd
+ls
+clear
+cd
+clear
+nu config
+config nu
+nvim
+config nu
+config env
+zoxide init nu
+zoxide init nushell
+starship init nu
+starship init
+starship init --help
+starship init nushell
+config nu
+clear
+z
+clear
+z
+config nu
+clear
+z
+clear
+config nu
+clear
+config nu
+clear
+nvim
+clear
+z con
+ls
+clar
+clear
+ls
+config nu
+cd dot
+z dot
+ls
+rm -rf sheldon
+ls
+cd zsh
+ls
+cd ..
+ls
+rm -rf zsh
+cd common
+ls
+cd ..
+ls
+cd common
+ls -a
+cd .config
+ls
+brew install lf
+lf
+clear
+lf
+yazi
+clear
+ls
+cd
+nu --mcp
+clear
+claer
+clear
+config nu
+nu config
+nvim
+bob
+bob update --all
+tmux
+bob update --all
+bob
+bob use stable
+bob use nightly
+nvim
+config env
+claer
+clear
+nvim
+tmux
+clear
+config nu
+config nu 
+clear
+config nu
+config env
+clear
