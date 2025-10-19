@@ -1,18 +1,4 @@
 return {
-  -- from lua/plugins/*bufferline.lua
-  { "akinsho/bufferline.nvim", enabled = false },
-
-  -- from lua/plugins/*lualine.lua
-  {
-    "folke/noice.nvim",
-    enabled = false,
-  },
-  {
-    "nvim-lualine/lualine.nvim",
-    enabled = false,
-  },
-
-  -- from lua/plugins/*snacks.lua
   {
     "folke/snacks.nvim",
     keys = {
@@ -26,7 +12,7 @@ return {
     },
   },
   {
-    "lewis6991/gitsigns.nvim",
+    "akinsho/bufferline.nvim",
     enabled = false,
   },
 }
